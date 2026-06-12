@@ -33,5 +33,10 @@ public class DemoApplication {
     public String soma(@RequestParam int a, @RequestParam int b) {
         return "Resultado: " + (a + b);
     }
+    
+    @GetMapping("/hello")
+    public String hello(@RequestParam(value = "name", defaultValue = "Matheus") String name) {
+        return String.format("Hello %s!", name);
+    }
 
 }
